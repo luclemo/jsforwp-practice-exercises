@@ -1,92 +1,89 @@
 <script>
   // 1. Create a variable with your name
-  var fullName = "John Appleseed";
+  var name = 'Lucas';
 
   // 2. Create a function that logs your name with console.log()
-  function log(name) {
-    console.log(name);
+  function logMyName(somename) {
+    console.log(somename);
   }
-  log(fullName);
+  logMyName(name);
+
 
   // 3. Create an object called "me" that includes properties for your first and last names as well as other properties for your website and social media
   var me = {
-    firstName: "John",
-    lastName: "Appleseed",
-    website: "john-appleseed.com",
-    socialMedia: {
-      twitter: "twitter.com/johnappleseed",
-      facebook: "facebook.com/johnappleseed"
+    first: 'Lucas',
+    last: 'Lemonnier',
+    site: 'https://lucaslemonnier.com',
+    social: {
+      twitter: '@luclemo',
+      instagram: '@luclemo',
+
     }
-  };
+  }
+  console.log(me);
 
   // 4. Create a boolean variable called loggedIn (set to either true or false)
-  var loggedIn = false;
+  var loggedIn = true;
 
   // 5. Write a conditional statement that logs "Logged In" when loggedIn is true and "Please login" when loggedIn is false
-  if (loggedIn) {
-    console.log("Logged In");
-  } else {
-    console.log("Please login");
+  var myMessage = function (param) {
+    var loggedIn = param;
+    if (loggedIn) {
+      console.log('Logged In');
+    } else {
+      console.log('Please login');
+    }
   }
+  myMessage(false);
+
 
   // 6. Create an array called ids filled with numbers that could represent post ids
   var ids = [1, 2, 3, 4];
 
   // 7. Loop over the ids and log them all out
-  // for loop example
-  for (var count = 0, max = ids.length; count < max; count++) {
-    console.log(ids[count]);
-  }
-  // for of loop example
   for (var id of ids) {
     console.log(id);
   }
 
   // 8. Create an array of post objects.  Include an id, title and content property on each object
-  var posts = [
-    {
-      id: 1,
-      title: "My awesome post title",
-      content: "And this is the content of the awesome post."
+  var posts = [{
+      id: "1",
+      title: "Ipsa Quos Eveniet",
+      content: "Sint officiis rem unde. Voluptas doloremque omnis ut et aut ratione dolorum amet. Ea perspiciatis culpa omnis asperiores accusamus fuga."
+
     },
     {
-      id: 2,
-      title: "My awesome second post title",
-      content: "And this is the content of the awesome post."
+      id: "2",
+      title: "Perferendis Odit Dolores",
+      content: "Fugiat quasi distinctio accusamus. Inventore ut perspiciatis officiis voluptatum. Non sint qui rerum voluptate.Ut voluptatem qui dolorem.Inventore veniam beatae eveniet ut odio id."
+
     },
     {
-      id: 3,
-      title: "My awesome third post title",
-      content: "And this is the content of the awesome post."
+      id: "3",
+      title: "Et Excepturi Odit",
+      content: "Nisi consequatur enim voluptatem. Nihil odit ipsa. Pariatur voluptatem et eveniet atque laborum."
+    },
+    {
+      id: "4",
+      title: "Commodi Quaerat Aspernatur",
+      content: "Iusto aut reiciendis debitis sunt quis quia. Officiis consectetur sed ut iure vitae sapiente quo voluptates. Ipsum deleniti porro soluta itaque est.Minima incidunt assumenda minima deleniti ex aut nisi.Tempore at aliquid aliquid."
+
     }
   ];
-  // 9. Loop over the array of posts and log out the title of each one
-  // for loop example
-  for (var count = 0, max = posts.length; count < max; count++) {
-    console.log(posts[count].title);
-  }
+  console.log(posts);
 
-  // for of loop example
-  for (var post of posts) {
+  // 9. Loop over the array of posts and log out the title of each one
+  for (post of posts) {
     console.log(post.title);
   }
 
+
   // 10. Create a function that will take an array of posts and log out the title and content of each post.
-  // for loop example
-  function logPosts(posts) {
-    for (var count = 0, max = posts.length; count < max; count++) {
-      var post = posts[count];
-      console.log(post.title);
-      console.log(post.content);
+  function logTitleAndContent(array) {
+    for (var item of array) {
+      console.log('Title:' + ' ' + item.title + '\n' + 'Content:' + ' ' + item.content);
     }
   }
-  logPosts(posts);
-  // for of loop example
-  function logPostsExample2(posts) {
-    for (var post of posts) {
-      console.log(post.title);
-      console.log(post.content);
-    }
-  }
-  logPostsExample2(posts);
+
+  logTitleAndContent(posts);
 </script>
