@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Practice 2</title>
+    <title>Practice 6</title>
   </head>
   <body>
     <header>
-      <h1><a href="#link-1">Esse reprehenderit</a></h1>
+      <h1><a href="#link-1" class="special">Esse reprehenderit</a></h1>
       <p>culpa nulla cillum do officia elit culpa dolor.</p>
     </header>
     <hr />
     <section id="main">
       <article class="post featured">
-        <h2 class="entry-title"><a href="#">Rfficia</a></h2>
+        <h2 class="entry-title"><a href="#" class="special">Rfficia</a></h2>
         <div class="entry-content">
           <p>Elit esse incididunt proident veniam.</p>
         </div>
@@ -32,7 +32,9 @@
         </div>
       </article>
       <article class="post">
-        <h2 class="entry-title"><a href="#">Reprehenderit</a></h2>
+        <h2 class="entry-title">
+          <a href="#" class="special">Reprehenderit</a>
+        </h2>
         <div class="entry-content">
           <p>Et ipsum dolor ullamco voluptate duis ipsum.</p>
         </div>
@@ -44,27 +46,28 @@
     </section>
   </body>
   <script>
-    
-  // 2. Select the element with an id of "start-here."  Then select the syblings of the element, the parent of the element, the parent of the parent of the element, and the children of the element and save them as variables.  Then log them all to the console.
+    // 6. Create an event handler on all links with a class of "special" that prevents the event default and logs the text of the link and the url of the link to the console.
 
-  var startHere = document.getElementById('start-here');
-  console.log(startHere);
-  
-  // get parent with parentNode
-  var parent = startHere.parentNode;
-  console.log(parent);
+    // getting all links with the class special
+    var links = document.querySelectorAll("a.special");
 
-  // get parent with parentElement
-  var parentsParent = startHere.parentElement.parentElement;
-  console.log(parentsParent);
+    // loop through all the special links
+    for (let link of links) {
+      // add a click event listener to each of the links
+      link.addEventListener("click", handleLinkClick);
+    }
 
-  // get all chld nodes (includng textnodes)
-  var children = startHere.childNodes;
-  console.log(children);
+    function handleLinkClick(event) {
+      // store the event.target in a local variable
+      var link = event.target;
 
-  // get all children that are Elements
-  var children = startHere.children;
-  console.log(children);
+      // prevent the default behavior
+      event.preventDefault();
 
+      // log the links text
+      console.log("Text:", link.innerText);
+      // log the links href
+      console.log("Link:", link.href);
+    }
   </script>
 </html>
