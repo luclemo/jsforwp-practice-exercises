@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Practice 4</title>
-  </head>
-  <body>
-    <main id="root"></main>
-  </body>
-  <script>
-    /*
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Practice 4</title>
+</head>
+
+<body>
+  <main id="root"></main>
+</body>
+<script>
+  /*
         4. Create the following markup using createElement() and createTextNode() and then append it to the page.
-        
+
         <article class="post">
             <h2 class="entry-title"><a href="#">Title</a></h2>
             <div class="entry-excerpt">
@@ -20,5 +22,33 @@
             </div>
         </article>
         */
-  </script>
+
+  var articleEl = document.createElement('article'),
+    h2El = document.createElement('h2'),
+    aEl = document.createElement('a'),
+    aText = document.createTextNode('Title'),
+    divEl = document.createElement('div'),
+    pEl = document.createElement('p'),
+    pText = document.createTextNode('Excerpt here…');
+
+  // Set all the attributes
+  articleEl.setAttribute('class', 'post');
+  h2El.setAttribute('class', 'entry-title');
+  aEl.setAttribute('href', '#');
+  divEl.setAttribute('class', 'entry-excerpt');
+
+  // Add text nodes
+  aEl.appendChild(aText);
+  pEl.appendChild(pText);
+
+  //Combine the elements
+  h2El.appendChild(aEl);
+  divEl.appendChild(pEl);
+  articleEl.appendChild(h2El);
+  articleEl.appendChild(divEl);
+
+  console.log(articleEl);
+  document.getElementById('root').appendChild(articleEl);
+</script>
+
 </html>
