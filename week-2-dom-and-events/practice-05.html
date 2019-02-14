@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Practice 5</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Practice 5</title>
-</head>
+  <body>
+    <header>
+      <h1><a href="#link-1">Esse reprehenderit</a></h1>
+      <p>culpa nulla cillum do officia elit culpa dolor.</p>
+    </header>
+    <section id="main">
+      <h2>Posts</h2>
+      <ul class="posts">
+        <li class="post-1">
+          <h2 class="entry-title"><a href="#">Aliquip</a></h2>
+          <div class="entry-content">
+            <p>Culpa nulla cillum do officia elit culpa dolor.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <script>
+    // 5. Create a clone of the list item and append it to the end of the list.
+    var list = document.querySelector("ul.posts");
 
-<body>
-  <header>
-    <h1><a href="#link-1">Esse reprehenderit</a></h1>
-    <p>culpa nulla cillum do officia elit culpa dolor.</p>
-  </header>
-  <section id="main">
-    <h2>Posts</h2>
-    <ul class="posts">
-      <li class="post">
-        <h2 class="entry-title"><a href="#">Aliquip</a></h2>
-        <div class="entry-content">
-          <p>Culpa nulla cillum do officia elit culpa dolor.</p>
-        </div>
-      </li>
-    </ul>
-  </section>
-</body>
-<script>
-  // 5. Create a clone of the list item and append it to the end of the list.
-  var list = document.querySelector('ul.posts');
-  var item = list.children[0];
-  var newItem = item.cloneNode(true);
+    var oldItem = list.children[0];
+    var newItem = oldItem.cloneNode(true);
 
-  list.appendChild(newItem);
-  console.log(list);
-</script>
+    var oldClassName = oldItem.getAttribute("class");
+    console.log(oldClassName);
+    var newClassName = oldClassName + "-2";
 
+    newItem.setAttribute("class", newClassName);
+
+    list.appendChild(newItem);
+    console.log(list);
+  </script>
 </html>
