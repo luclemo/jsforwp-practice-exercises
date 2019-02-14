@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700");
+
+:root {
+  --color-text-1: #212121;
+  --color-grey-1: #c1c1c1;
+  --color-grey-2: #edece8;
+  --color-grey-3: #faf9f5;
+  --color-accent: gold;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-header: --font-body;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--color-text-1);
+  font-family: var(--font-body);
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 13em 1fr;
+  grid-gap: 10vw;
+}
+
+h1 {
+  margin-top: 0;
+  border-top: 10px solid;
+}
+
+.main {
+  display: grid;
+  grid-row-gap: 13rem;
+  border-top: 10px solid;
+}
+
+.nav {
+  position: sticky;
+  top: 1rem;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  border-bottom: 1px solid;
+}
+
+.nav__link {
+  color: var(--color-text-1);
+  text-decoration: none;
+  display: flex;
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav__link:hover {
+  background: var(--color-accent);
+}
