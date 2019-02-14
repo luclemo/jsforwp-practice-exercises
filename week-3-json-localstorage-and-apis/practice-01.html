@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Practice 1</title>
-  </head>
-  <body>
-    <header>
-      <h1>1. Create a JSON string of 3 post objects</h1>
-    </header>
-    <hr />
-    <main id="root"></main>
-  </body>
-  <script>
-    // 1. Create a JSON string of 3 post objects.
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Practice 1</title>
+</head>
 
-  </script>
+<body>
+  <header>
+    <h1>1. Create a JSON string of 3 post objects</h1>
+  </header>
+  <hr />
+  <main id="root"></main>
+</body>
+<script>
+  // 1. Create a JSON string of 3 post objects.
+  var posts =
+    `
+[{
+"id": 1,
+"title": "Hello world",
+"content": "One of the cool things you can do with WordPress is create your own custom sidebars in the editor. Check out the video below to get a solid overview of the Plugin Sidebar API and a walk through of how"
+},
+{
+"id": 2,
+"title": "Goodbye world",
+"content": "One of the cool things you can do with WordPress is create your own custom sidebars in the editor. Check out the video below to get a solid overview of the Plugin Sidebar API and a walk through of how"
+},
+{
+"id": 3,
+"title": "I'm back!",
+"content": "One of the cool things you can do with WordPress is create your own custom sidebars in the editor. Check out the video below to get a solid overview of the Plugin Sidebar API and a walk through of how"
+}
+]
+`
+  console.log(JSON.parse(posts));
+</script>
+
 </html>
