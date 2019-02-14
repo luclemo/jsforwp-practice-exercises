@@ -86,20 +86,30 @@ function createContent(header, paragraph) {
   return (content);
 }
 
+
 // =====================================
 // Part three
 // Enhancement - vanilla smooth scroll
 // =====================================
 
-// var thing = document.querySelector('#section-four');
-// console.log(thing);
+var thing = document.querySelector('#section-four');
+console.log(thing);
 
-// function scrollToSection(e) {
-//   e.preventDefault();
-//   document.querySelector('#section-four').scrollIntoView({
-//     behavior: 'smooth'
-//   });
-// }
+function scrollToSection(e) {
+  e.preventDefault();
+  thing.scrollIntoView({
+    behavior: 'smooth'
+  });
+}
 
-// var menuItem = document.querySelector('.nav__link');
-// menuItem.addEventListener('click', scrollToSection, false);
+var menuItem = document.querySelector('.nav__item:last-child a');
+console.log(menuItem);
+menuItem.addEventListener('click', scrollToSection, false);
+
+// Create function for smoothscrolling
+function scrollToSection(e) {
+  e.preventDefault();
+  destinationEl.scrollIntoView({
+    behavior: 'smooth'
+  });
+}
