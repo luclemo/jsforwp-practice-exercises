@@ -92,24 +92,26 @@ function createContent(header, paragraph) {
 // Enhancement - vanilla smooth scroll
 // =====================================
 
-var thing = document.querySelector('#section-four');
-console.log(thing);
+// Get all the links
+var links = document.querySelectorAll('.nav__item a');
+console.log(links);
 
-function scrollToSection(e) {
-  e.preventDefault();
-  thing.scrollIntoView({
-    behavior: 'smooth'
-  });
+
+//for each link...
+for (var link of links) {
+  link.addEventListener('click', scrollToSection, false);
 }
 
-var menuItem = document.querySelector('.nav__item:last-child a');
-console.log(menuItem);
-menuItem.addEventListener('click', scrollToSection, false);
-
-// Create function for smoothscrolling
 function scrollToSection(e) {
+  // get the href of clicked ancor link
+  var href = e.target.href;
+  // Split it at #, then add it back at the beginning
+  id = '#' + href.split('#').pop();
+  // Get the element with that id
+  goHere = document.querySelector(id);
+
   e.preventDefault();
-  destinationEl.scrollIntoView({
+  goHere.scrollIntoView({
     behavior: 'smooth'
   });
 }
