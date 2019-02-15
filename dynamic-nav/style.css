@@ -37,7 +37,7 @@ h1 {
 
 .main {
   display: grid;
-  grid-row-gap: 13rem;
+  grid-auto-rows: 100vh;
   border-top: 10px solid;
 }
 
